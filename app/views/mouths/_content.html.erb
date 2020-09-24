@@ -1,0 +1,40 @@
+<%= render "shared/errors", obj: @mouth %>
+
+<table>
+    <tr>
+        <th><%= form.label :company %></th>
+        <td><%= form.text_field :company %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :category %></th>
+        <td><%= form.text_field :category, :placeholder => "例：IT企業" %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :title %></th>
+        <td><%= form.text_field :title %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :sex %></th>
+        <td><%= form.radio_button :sex, 0 %>
+            <%= form.label :sex_0 %>
+            <%= form.radio_button :sex, 1 %>
+            <%= form.label :sex_1 %>
+        </td>
+  </tr>
+    <tr>
+        <th><%= form.label :yourself %></th>
+        <td><%= form.text_field :yourself, :placeholder => "例：私立文系、関関同立" %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :subject %></th>
+        <td><%= form.text_field :subject, :placeholder => "例：経営学" %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :content %></th>
+        <td><%= form.text_area :content, rows: 10, cols: 45 %></td>
+    </tr>
+</table>
+<%= form.hidden_field :write_day, value: Date.today %>
+<% if current_user %>
+    <%= form.hidden_field :mine, value: current_user.name %>
+<% end %>

@@ -1,0 +1,38 @@
+<%= render "shared/errors", obj: @schedule %>
+
+<table>
+    <tr>
+        <th><%= form.label :name %></th>
+        <td><%= form.text_field :name, size: 30 %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :event_day %></th>
+        <td><%= form.date_field :event_day,
+              use_month_numbers: true %></td>
+    </tr>
+    <tr>
+        <th><%= form.label "時間" %></th>
+        <td>
+            <div>
+                <%= form.check_box :no_expiration %>
+                <%= form.label :no_expiration %>
+            </div>
+            <div>
+                <%= form.time_field :start %>～
+                <%= form.time_field :endDate %>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th><%= form.label :place %></th>
+        <td><%= form.text_area :place, rows: 3, cols: 45 %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :content %></th>
+        <td><%= form.text_area :content, rows: 3, cols: 45 %></td>
+    </tr>
+
+</table>
+<% if current_user %>
+    <%= form.hidden_field :mine, value: current_user.name%>
+<% end %>

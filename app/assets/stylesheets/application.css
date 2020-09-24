@@ -1,0 +1,248 @@
+html{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+body{
+    background: -moz-radial-gradient(#e6f0f0,#7fd9d2); 
+    background: -webkit-radial-gradient(#e6f0f0,#7fd9d2); 
+    background: radial-gradient(#e6f0f0,#7fd9d2); 
+}
+.container{
+    display: flex;
+}
+.container{
+    display: flex;
+}
+main{
+    width: 65%;
+}
+
+aside{
+    width: 35%;
+    margin-left: 5%;
+}
+
+/*-------header 上部--------*/
+.header_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    border-bottom: 5px solid #000;
+}
+.account-menu li{
+    list-style: none;
+}
+.account-menu li a{
+    color: #f37053;
+}
+
+/*-------link--------*/
+a{
+    color: #000;
+}
+.no_link{
+    text-decoration: none;
+    color: #000;
+}
+.no_link:hover{
+    color: #00aaff
+}
+
+/*-----------_header------------*/
+ /* メニューバー */
+.menubar ul {
+    display: flex;
+    list-style: none;
+    padding: 2px;
+    background-color: #000;
+    color: #ccc;
+    padding: 8px 16px;
+    font-size: 80%;
+}
+
+  /* メニューバーのリンク */
+nav.menubar a { text-decoration: none; }
+  
+  /* メニューバーのリンク（未訪問） */
+nav.menubar a:link { color: #ccc; }
+  
+  /* メニューバーのリンク（訪問済） */
+nav.menubar a:visited { color: #ccc; }
+  
+  /* メニューバーのリンク（マウスを合わせたとき） */
+nav.menubar a:hover {
+    color: #f88;
+    text-decoration: underline;
+}
+  
+  /* メニューバーのリンク（現在のページ） */
+nav.menubar span {
+    color: #ff8;
+    font-weight: bold;
+}
+
+nav.menubar ul li:not(:last-child):after {
+    color: #ccc;
+    content: " | ";
+    margin: 0 15px;
+}
+
+/*------------top page-------------*/
+.top-page h4{
+    color: #f37053;
+    background-color: #b4c1d1;
+    padding-left: 10px;
+    margin-bottom: -10px;
+}
+.top-page p{
+    padding: 0 10px 0 3px;
+}
+
+/*-------------side bar-----------------*/
+.side-bar h4{
+    text-align: center;
+    color: #7ab977;
+    border-bottom: 1px solid #7ab977;
+}
+.side-bar li{
+    margin-top: 5px;
+    margin-left: 5%;
+    padding-bottom: 10px;
+}
+.side-bar span{
+    margin-left: 7%;
+}
+
+/*--------table---------*/
+table{
+    width: 100%;
+    border-collapse:separate;
+    border-spacing: 0;
+}
+  
+table th:first-child{
+    border-radius: 5px 0 0 0;
+}
+  
+table th:last-child{
+    border-radius: 0 5px 0 0;
+    border-right: 1px solid #3c6690;
+}
+  
+table th{
+    text-align: center;
+    padding-left: 10px;
+    color:white;
+    background: linear-gradient(#829ebc,#225588);
+    border-left: 1px solid #829ebc;
+    border-top: 1px solid #829ebc;
+    border-bottom: 1px solid #829ebc;
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+    width: 15%;
+    padding: 10px 0;
+}
+  
+table td{
+    text-align: center;
+    border-left: 1px solid #a8b7c5;
+    border-bottom: 1px solid #a8b7c5;
+    border-top:none;
+    box-shadow: 0px -3px 5px 1px #eee inset;
+    width: 35%;
+    padding: 10px 0;
+}
+  
+table td:last-child{
+    border-right: 1px solid #a8b7c5;
+    width: 10%;
+}
+td.link_pad{
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 30%;
+}
+  
+table tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+}
+  
+table tr:last-child td:last-child {
+    border-radius: 0 0 5px 0;
+}
+
+/*-------------bottun----------------*/
+.submit_button{
+    text-align: right;
+    margin-top: 5px;
+}
+/*-----------------------------*/
+.link_right{
+    text-align: right;
+    margin: 5px 5px;
+}
+
+/*-------study-----------*/
+h2{
+    border-bottom: solid 2px #000;
+}
+.short_form{
+    border: dotted 3px #225588;
+    padding: 0 5px 0 5px;
+}
+/*-------ページネーション-------*/
+nav.pagination{
+    font-size: 75%;
+    padding: 4px 8px;
+    border: 1px solid #499;
+    word-spacing: 4px;
+}
+
+nav.pagination span.current{
+    font-weight: bold;
+}
+
+/*----------長文（simple_format）-----------*/
+.long_form{
+    text-align: left;
+    padding: 0 7px 0 7px;
+}
+
+/*--------------ログイン関連------------------*/
+input[type="text"]{
+    width: 80%;
+    height: 20px;
+    font-size: 15px;
+}
+input[type="email"]{
+    width: 80%;
+    height: 20px;
+    font-size: 15px;
+}
+input[type="password"]{
+    width: 80%;
+    height: 20px;
+    font-size: 15px;
+}
+input[type="submit"]{
+    font-size: 15px;
+}
+.actions{
+    margin: 10px 0 0 70%;
+}
+.login_link{
+    margin: 40px 0 0 35%;
+    font-size: 15px;
+}
+
+/*--------------footer---------------*/
+.footer{
+    text-align: center;
+    margin: 40px -20px;
+    border-top: solid 2px #ddd;
+    padding-top: 10px;
+}
+.footer p{
+    margin-top: 20px;
+}

@@ -1,0 +1,29 @@
+<% @page_title="企業分析" %>
+
+<h1><%= @page_title %></h1>
+
+<%= form_tag :search_studies, method: :get, class: "search" do %>
+    <%= text_field_tag "q", params[:q] %>
+    <%= submit_tag "検索" %>
+<% end %>
+
+<div class="link_right">
+    <%= link_to "スケジュール追加", :new_study %>
+</div>
+
+<% if @studies.present? %>
+    <% @studies.each do |study| %>
+        <% if study.mine==current_user.name %>
+            <h2>
+                <%= link_to study.title, study, class: "no_link" %>
+            </h2>
+
+            <div class="short_form">
+                <%= simple_format(truncate(study.memo, length:40)) %>
+            </div>
+        <% end %>
+    <% end %>
+    <%= paginate @studies %>
+<% else %>
+    <p>企業分析記事はありません。</p>
+<% end %>

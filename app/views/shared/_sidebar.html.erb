@@ -1,0 +1,30 @@
+
+<div class="side-bar">
+
+    <% if user_signed_in? %>
+        <h4>直近スケジュール</h4>
+        
+        <% schedules=Schedule.order(event_day: :asc).limit(3) %>
+        <% schedules.each do |schedule| %>
+            <% if schedule.mine==current_user.name %>
+                <li><%= link_to schedule.name, schedule %>
+                （<%= schedule.event_day %>）</li>
+            <% end %>
+        <% end %>
+        <h4>最新分析記事</h4>
+        <% studies=Study.order(id: :asc).limit(3) %>
+        <% studies.each do |study| %>
+            <% if study.mine==current_user.name %>
+                <li><%= link_to study.title, study %></li>
+            <% end %>
+        <% end %>
+        <h4>口コミ（投稿済み）</h4>
+        <% mouths=Mouth.all %>
+        <% mouths.each do |mouth| %>
+            <% if mouth.mine==current_user.name %>
+                <li><%= link_to mouth.company, mouth %></li>
+            <% end %>
+        <% end %>
+
+    <% end %>
+</div>

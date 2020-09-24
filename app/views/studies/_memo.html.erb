@@ -1,0 +1,16 @@
+<%= render "shared/errors", obj: @study %>
+
+<table>
+    <tr>
+        <th><%= form.label :title %></th>
+        <td><%= form.text_field :title %></td>
+    </tr>
+
+    <tr>
+        <th><%= form.label :memo %></th>
+        <td><%= form.text_area :memo, rows: 10, cols: 45 %></td>
+    </tr>
+</table>
+<% if current_user %>
+    <%= form.hidden_field :mine, value: current_user.name%>
+<% end %>

@@ -1,0 +1,15 @@
+<% @page_title="メール検索" %>
+<h1><%= @page_title %></h1>
+
+<p>メール検索</p>
+<%= form_tag :search_receives, method: :get, class: "search" do %>
+    <%= text_field_tag "q", params[:q] %>
+    <%= submit_tag "検索" %>
+<% end %>
+
+<% @mailbox.each do |mails| %>
+
+    <ul>
+        <li><%= mails.text_part.decoded %></li><br>
+    </ul>
+<% end %>

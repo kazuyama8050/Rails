@@ -1,0 +1,33 @@
+<div class="header_container">
+
+    <span><%= image_tag "logo.png", size: "272x40", alt: "recruit" %></span>
+    <span>
+        <% if user_signed_in? %>
+            <ul class="account-menu">
+                <%= current_user.name %>
+                <%= menu_link_to "ログアウト", destroy_user_session_path,
+                    method: :delete, data: {confirm: "ログアウトしますか？"} %>
+            </ul>
+        <% else %>
+            <%= link_to "ログイン", new_user_session_path %><br>
+            <%= link_to "新規登録", new_user_registration_path %>
+        <% end %>
+    </span>
+</div>
+
+<nav class="menubar">
+    <ul>
+        <%= menu_link_to "TOP", :root %>
+        <% if user_signed_in? %>
+                
+                <%= menu_link_to "検索", :companies %>
+                <%= menu_link_to "スケジュール", :schedules %>
+                <% if current_user.name=="kazuki8050" %>
+                    <%= menu_link_to "メール", :receives %>
+                <% end %>
+                <%= menu_link_to "企業分析", :studies %>
+        <% end %>
+        <%= menu_link_to "各種検索", :searchers %>
+        <%= menu_link_to "口コミ情報", :mouths %>
+    </ul>
+</nav>

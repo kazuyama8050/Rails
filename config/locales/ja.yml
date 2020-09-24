@@ -1,0 +1,46 @@
+ja:
+  activerecord: 
+    models:
+      company: 企業情報
+      schedule: スケジュール
+      study: 企業分析
+      mouth: 口コミ
+      account: アカウント情報
+    attributes:
+      company:
+        name: 企業名
+        ids: ID
+        password: パスワード
+        link: 採用サイト
+        homepage: 企業サイト
+        memo: メモ
+
+      schedule:
+        name: イベント名
+        event_day: 開始日
+        start: 開始時間
+        end_date: 終了時間
+        no_expiration: 終了時間を設定しない
+        place: 場所
+        content: 内容
+
+      study:
+        title: タイトル
+        memo: 内容
+      
+      mouth:
+        company: 企業名
+        category: 業界・業種
+        title: タイトル
+        sex: 性別
+        sex_0: 男
+        sex_1: 女
+        write_day: 投稿日
+        yourself: 在籍
+        subject: 専攻分野
+        content: 口コミ内容
+
+    errors:
+      messages:
+        event_day_too_old: 現在日時より新しい日時に設定してください。
+        not_saved: 登録に失敗しました。

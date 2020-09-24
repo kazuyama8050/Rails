@@ -1,0 +1,37 @@
+<% @page_title="企業検索" %>
+<h1><%= @page_title %></h1>
+
+<%= form_tag :search_companies, method: :get, class: "search" do %>
+    <%= text_field_tag "q", params[:q] %>
+    <%= submit_tag "検索" %>
+<% end %>
+
+<div class="link_right">
+    <%= link_to "新規登録", :new_company %>
+</div>
+<% if @companies.present? %>
+    <table width="100%">
+        <tr>
+            <th>企業名</th>
+            <th>ID</th>
+            <th>マイページ</th>
+            <th>操作</th>
+        </tr>
+        <% @companies.each do |company| %>
+            <% if company.mine==current_user.name %>
+                <tr>
+                    <td width="25%"><%= link_to company.name, company, class: "no_link" %></td>
+                    <td width="20%"><%= company.ids %></td>
+                    <td width="45%" class="link_pad"><a href=<%= company.link %> target=”_blank”><%= company.link %></a></td>
+                    <td width="10%">
+                        <%= link_to "edit", [:edit, company] %><br>
+                        <%= link_to "delete", company, method: :delete, data: {confirm: "削除してよろしいですか？"} %>
+                    </td>
+                </tr>
+            <% end %>
+        <% end %>
+    </table>
+    
+<% else %>
+    <p>企業情報がありません</p>
+<% end %>

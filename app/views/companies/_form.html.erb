@@ -1,0 +1,31 @@
+<%= render "shared/errors", obj: @company %>
+
+<table>
+    <tr>
+        <th><%= form.label :name %></th>
+        <td><%= form.text_field :name, size: 30 %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :ids %></th>
+        <td><%= form.text_field :ids, size: 30 %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :password %></th>
+        <td><%= form.text_field :password, size: 30 %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :link %></th>
+        <td><%= form.text_area :link, rows: 3, cols: 45 %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :homepage %></th>
+        <td><%= form.text_area :homepage, rows: 3, cols: 45 %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :memo %></th>
+        <td><%= form.text_area :memo, rows: 10, cols: 45 %></td>
+    </tr>
+</table>
+<% if current_user %>
+    <%= form.hidden_field :mine, value: current_user.name%>
+<% end %>

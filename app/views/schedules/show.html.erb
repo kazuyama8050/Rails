@@ -1,0 +1,33 @@
+<% @page_title="スケジュールの詳細" %>
+
+<h1><%= @page_title %></h1>
+
+<div class="link_right">
+    <%= link_to "スケジュールの編集", [:edit, @schedule] %>
+</div>
+<table>
+    <tr>
+        <th>イベント名</th>
+        <td><%= @schedule.name %></td>
+    </tr>
+    <tr>
+        <th>開始日</th>
+        <td><%= @schedule.event_day.strftime("%Y/%m/%d") %></td>
+    </tr>
+    <tr>
+        <th>時間</th>
+        <td><%= @schedule.start.strftime("%H:%M") %>～<%= @schedule.endDate.try(:strftime, "%H:%M") %></td>
+    </tr>
+    <tr>
+        <th>場所</th>
+        <td><%= simple_format(@schedule.place) %></td>
+    </tr>
+    <tr>
+        <th>メモ</th>
+        <td><%= simple_format(@schedule.content) %></td>
+    </tr>
+</table>
+
+<div class="link_right">
+    <%= link_to "スケジュールTopへ戻る", :schedules %>
+</div>

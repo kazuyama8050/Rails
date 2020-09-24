@@ -1,0 +1,37 @@
+<% @page_title="各種検索" %>
+<h1><%= @page_title %></h1>
+
+<p>企業検索</p>
+<%= form_tag :search_searchers, method: :get, class: "search" do %>
+    <%= text_field_tag "q", params[:q] %>
+    <%= submit_tag "検索" %>
+<% end %>
+
+<h3><%= @variety %></h3>
+<table>
+    <tr>
+        <th>IRバンク</th>
+        <td><a href=<%= @ir %> target=”_blank”><%= @ir %></a></td>
+    </tr>
+    <tr>
+        <th>かぶたん</th>
+        <td><a href=<%= @kabutan %> target=”_blank”><%= @kabutan %></a></td>
+    </tr>
+    <tr>
+        <th>FUMA</th>
+        <td><a href=<%= @fuma %> target=”_blank”><%= @fuma %></a></td>
+    </tr>
+    <tr>
+        <th>帝国データバンク</th>
+        <td><a href=<%= @tdb %> target=”_blank”><%= @tdb %></a></td>
+    </tr>
+    <tr>
+        <th>LightHouse</th>
+        <td><a href=<%= @lighthouse %> target=”_blank”><%= @lighthouse %></a></td>
+    </tr>
+    <tr>
+        <th>Yahoo 仕事教えて</th>
+        <td><a href=<%= @yahoo %> target=”_blank”><%= @yahoo %></a></td>   
+    </tr>
+</table>
+
