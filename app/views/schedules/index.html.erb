@@ -24,7 +24,7 @@
         </thead>
         <tbody>
             <% @schedules.each do |schedule| %>
-                <% if schedule.mine==current_user.name %>
+                <% if schedule.mine==current_user.name && schedule.event_day < Date.now %>
                     <tr>
                         <td><%= link_to schedule.name, schedule, class: "no_link" %></td>
                         <td><%= schedule.event_day %></td>

@@ -3,7 +3,7 @@
 <table>
     <tr>
         <th><%= form.label :name %></th>
-        <td><%= form.text_field :name, size: 30 %></td>
+        <td><%= form.text_field :name, size: 30, :class=>"null_form", :placeholder => "※必須" %></td>
     </tr>
     <tr>
         <th><%= form.label :event_day %></th>

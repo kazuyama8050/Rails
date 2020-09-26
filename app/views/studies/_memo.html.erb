@@ -3,12 +3,12 @@
 <table>
     <tr>
         <th><%= form.label :title %></th>
-        <td><%= form.text_field :title %></td>
+        <td><%= form.text_field :title, :class=>"null_form", :placeholder => "※必須" %></td>
     </tr>
 
     <tr>
         <th><%= form.label :memo %></th>
-        <td><%= form.text_area :memo, rows: 10, cols: 45 %></td>
+        <td><%= form.text_area :memo, rows: 10, cols: 45, :class=>"null_form", :placeholder => "※必須" %></td>
     </tr>
 </table>
 <% if current_user %>

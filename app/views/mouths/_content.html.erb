@@ -3,15 +3,15 @@
 <table>
     <tr>
         <th><%= form.label :company %></th>
-        <td><%= form.text_field :company %></td>
+        <td><%= form.text_field :company, :class=>"null_form", :placeholder => "※必須" %></td>
     </tr>
     <tr>
         <th><%= form.label :category %></th>
-        <td><%= form.text_field :category, :placeholder => "例：IT企業" %></td>
+        <td><%= form.text_field :category, :class=>"null_form", :placeholder => "例：IT企業" %></td>
     </tr>
     <tr>
         <th><%= form.label :title %></th>
-        <td><%= form.text_field :title %></td>
+        <td><%= form.text_field :title, :class=>"null_form", :placeholder => "※必須" %></td>
     </tr>
     <tr>
         <th><%= form.label :sex %></th>
@@ -31,7 +31,7 @@
     </tr>
     <tr>
         <th><%= form.label :content %></th>
-        <td><%= form.text_area :content, rows: 10, cols: 45 %></td>
+        <td><%= form.text_area :content, rows: 10, cols: 45, :class=>"null_form", :placeholder => "※必須" %></td>
     </tr>
 </table>
 <%= form.hidden_field :write_day, value: Date.today %>

@@ -2,7 +2,7 @@ class SchedulesController < ApplicationController
     before_action :authenticate_user!
     
     def index
-        @schedules=Schedule.order(event_day: :desc)
+        @schedules=Schedule.order(event_day: :asc)
         @schedules=@schedules.page(params[:page]).per(10)
     end
 

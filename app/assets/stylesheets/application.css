@@ -183,6 +183,16 @@ table tr:last-child td:last-child {
     margin: 5px 5px;
 }
 
+/*-----------non-null form--------------*/
+
+.null_form:placeholder-shown{
+    background-color: red;
+    opacity: 0.8;
+}
+.null_form::placeholder{
+    color: black;
+}
+
 /*-------study-----------*/
 h2{
     border-bottom: solid 2px #000;
